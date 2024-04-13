@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 public class GHappyTest {
     @ParameterizedTest
-    @CsvSource( {"xxggxx", "xxgxx", "xxggyygxx", "ggxx", "xgg", "gxgx", "xgxg"})
+    @CsvSource( {"xxggxx", "ggxx", "xgg"})
     public void gHappy(String g) {
         GHappy str = new GHappy();
         boolean result = str.gHappy(g);
@@ -15,8 +15,24 @@ public class GHappyTest {
     }
 
     @ParameterizedTest
+    @CsvSource( {"xxgxx", "xxggyygxx", "gxgx", "xgxg"})
+    public void gUnHappy(String g) {
+        GHappy str = new GHappy();
+        boolean result = str.gHappy(g);
+        Assertions.assertFalse(result);
+    }
+
+    @ParameterizedTest
     @CsvSource( {"xxGGxx", "xxGxx", "xxGGyygxx"})
-    public void gHappyUpperCase(String g) {
+    public void gHappyLowerCase(String g) {
+        GHappy str = new GHappy();
+        boolean result = str.gHappy(g);
+        Assertions.assertFalse(result);
+    }
+
+    @ParameterizedTest
+    @CsvSource( {"xxiixx", "xxixx", "xxyyxx"})
+    public void gHappyNoExistG(String g) {
         GHappy str = new GHappy();
         boolean result = str.gHappy(g);
         Assertions.assertFalse(result);
