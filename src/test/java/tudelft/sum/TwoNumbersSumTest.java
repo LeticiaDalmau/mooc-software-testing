@@ -15,7 +15,7 @@ public class TwoNumbersSumTest {
         TwoNumbersSum addTwoNumbers = new TwoNumbersSum();
         ArrayList<Integer> result = addTwoNumbers.addTwoNumbers(first, second);
 
-        Assertions.assertEquals(1, result.get(2));
+        Assertions.assertEquals(9, result.get(2));
     }
 
     @Test

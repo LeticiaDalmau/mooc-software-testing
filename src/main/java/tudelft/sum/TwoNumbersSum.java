@@ -16,7 +16,7 @@ class TwoNumbersSum {
         for(int i = 0; i < Math.max(first.size(), second.size()); i++){
             int firstVal = i < first.size() ? first.get(i) : 0;
             int secondVal = i < second.size() ? second.get(i) : 0;
-            if (firstVal>0 && secondVal>0){
+            if (firstVal>=0 && secondVal>=0){
                 int total = firstVal + secondVal + complement;
                 complement = 0;
                 if (total >= 10){
